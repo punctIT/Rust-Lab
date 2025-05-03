@@ -1,29 +1,14 @@
-# Compiled files and folders
-/target/
+# Ignoră toate directoarele target din subfoldere
+**/target/
 
-# Backup files
+# Ignoră toate fișierele Cargo.lock doar dacă sunt librării
+# Dacă TOATE sunt executabile, poți șterge linia de mai jos
+**/Cargo.lock
+
+# Fișiere temporare sau specifice IDE-urilor
 **/*.rs.bk
-
-# Node-style dependency folders (just in case)
-/node_modules/
-
-# Executables (if you compile to the root dir or custom paths)
-*.exe
-*.dll
-*.so
-*.dylib
-
-# MacOS specific files
+**/*.swp
+**/*.swo
 .DS_Store
-
-# IDEs and editors
 .idea/
 .vscode/
-*.swp
-*.swo
-
-# Byebug and other REPL history
-.irb-history
-
-# Cargo package manager
-/Cargo.lock
