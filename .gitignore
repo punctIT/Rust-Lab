@@ -1,0 +1,29 @@
+# Compiled files and folders
+/target/
+
+# Backup files
+**/*.rs.bk
+
+# Node-style dependency folders (just in case)
+/node_modules/
+
+# Executables (if you compile to the root dir or custom paths)
+*.exe
+*.dll
+*.so
+*.dylib
+
+# MacOS specific files
+.DS_Store
+
+# IDEs and editors
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Byebug and other REPL history
+.irb-history
+
+# Cargo package manager
+/Cargo.lock
