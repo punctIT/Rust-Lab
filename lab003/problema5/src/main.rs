@@ -8,11 +8,11 @@ enum ErrorType{
     NotAscii,
     CompuseNumber,
     Overflow,
-    result,
+    Result,
 }
 fn string_to_int32(s:&String)->Result<i32,ErrorType>{
     if s.trim() == "result"{
-        return Err(ErrorType::result);
+        return Err(ErrorType::Result);
     }
     let s2 = s.as_bytes();
     for i in 0..s.len(){
@@ -67,7 +67,7 @@ fn div_operation(nr1:i32,nr2:i32)-> Result<i32,ErrorType>{
 fn main() {
     let mut nr:i32=0;
     loop {
-        println!("number: / 'result'   / Last Result:{}",nr);
+        println!("number: / 'Result'   / Last Result:{}",nr);
         let mut input = String::new();
         io::stdin()
             .read_line(&mut input)
@@ -78,7 +78,7 @@ fn main() {
             nr_new=string_to_int32(&input).unwrap();
         }
         else {
-            if string_to_int32(&input).err()==Some(ErrorType::result){
+            if string_to_int32(&input).err()==Some(ErrorType::Result){
                 println!("{}",nr);
                 break;
             }
