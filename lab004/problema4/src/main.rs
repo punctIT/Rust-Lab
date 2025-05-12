@@ -6,10 +6,16 @@ fn read_text(path:&str)->Result<String,io::Error>{
 }
 fn main() {
     let s:String=read_text("C:/Windows/System32/drivers/etc/hosts").unwrap();
-    for i in s.lines(){
-        if s.starts_with('#'){
+    for line in s.lines() {
+        let line = line.trim();
+        if line.is_empty() || line.starts_with('#') {
             continue;
-        } 
-        println!("{} ",i);
+        }
+        let mut columns = line.split_ascii_whitespace();
+        if let Some(host) = columns.next() {
+            if let Some(id_address) = columns.next() {
+                println!("{} => {}", host, id_address);
+           }
+        }
     }
 }
