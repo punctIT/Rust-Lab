@@ -1,9 +1,8 @@
-fn add_chars_n(s: &mut String,c :char , n:i32){
-  let mut i=0;
-  while i<n {
-    s.push(c);
-    i+=1;
-  }
+
+fn add_chars_n(s:&mut String,c:char,n:usize){
+    for _ in 0..n{
+        *s+=format!("{}",c).as_str();
+    }
 }
 
 fn main() {

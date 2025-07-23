@@ -1,15 +1,11 @@
 
 fn add_space(s:&mut String,n :i32){
-    let mut i:i32=0;
-    while i < n {
+    for _ in 0..n as usize{
         s.push(' ');
-        i+=1;
     }
 }
 fn add_str(s:&mut String , s2: &str){
-    for i in 0..s2.len(){
-        s.push(s2.as_bytes()[i] as char);
-    }
+    *s+=s2;
 }
 fn add_integer(s:&mut String ,mut n :i32){
     let mut n2:i32=0;
