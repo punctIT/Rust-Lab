@@ -14,7 +14,7 @@ fn rot13(s: &mut String){
         }
         if i >='A' && i <='Z'{
             if c as u8 + 13 <= 'Z' as u8{
-                c = (c as u8 +13)as char;
+                c = (c as u8 +13) as char;
             }
             else {
                 let k:u8 = c as u8 + 13 - 'Z' as u8;
@@ -35,7 +35,11 @@ fn rot13(s: &mut String){
     *s=s2;
 }  
 fn main() {
-    let mut s:String = read_text("text.txt").unwrap();
-    rot13(&mut s);
-    println!("{}",s)
+    if let Ok(mut s) = read_text("text.txt"){
+        rot13(&mut s);
+        println!("{}",s)
+    }
+    else {
+        println!("erorae la citire");
+    }
 }
